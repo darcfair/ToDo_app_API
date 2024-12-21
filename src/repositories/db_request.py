@@ -4,7 +4,7 @@ select_all_notes = '''SELECT * FROM notes;'''
 
 select_note = (
     'SELECT * FROM notes\n'
-    'WHERE notes.id={id};'
+    'WHERE notes.note_id={id};'
 )
 
 create_table_note = (
@@ -21,4 +21,9 @@ SELECT * FROM notes);'''
 create_note = (
     'INSERT INTO notes VALUES (\n'
     "DEFAULT, '{name}', '{description}');"
+)
+
+select_note_by_name = (
+    '''SELECT * FROM notes
+WHERE notes.note_name LIKE '%{name}%';'''
 )
