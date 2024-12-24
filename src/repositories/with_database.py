@@ -47,3 +47,12 @@ def create_new_note_db(cursor, note: Note):
         description=note.description
         ))
     return "Sucsess"
+
+
+@get_connection
+def delete_note_db_with_id(cursor, id: int):
+    """Создание новой заметки"""
+    cursor.execute(db_request.delete_note_by_id.format(
+        id=id
+        ))
+    return "Sucsess"

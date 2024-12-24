@@ -27,3 +27,6 @@ select_note_by_name = (
     '''SELECT * FROM notes
 WHERE notes.note_name LIKE '%{name}%';'''
 )
+
+
+delete_note_by_id = 'DELETE FROM TABLE notes WHERE notes.notes_id = {id}'

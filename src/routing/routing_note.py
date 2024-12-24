@@ -51,3 +51,14 @@ async def create_note(note: Note):
             detail=result.get("Reply")
             )
     return result
+
+
+@app.delete("/delete_note")
+async def delete_note(id: int):
+    result = with_database.delete_note_db_with_id(id=id)
+    if not result["Connection"]:
+        raise HTTPException(
+            status_code=500,
+            detail=result.get("Reply")
+            )
+    return result
