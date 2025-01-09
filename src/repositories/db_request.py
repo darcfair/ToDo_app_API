@@ -1,6 +1,6 @@
 select_version = '''SELECT version();'''
 
-select_all_notes = '''SELECT * FROM notes;'''
+select_all_notes = '''SELECT note_id, note_name FROM notes;'''
 
 select_note = (
     'SELECT * FROM notes\n'
@@ -29,4 +29,4 @@ WHERE notes.note_name LIKE '%{name}%';'''
 )
 
 
-delete_note_by_id = 'DELETE FROM TABLE notes WHERE notes.notes_id = {id}'
+delete_note_by_id = 'DELETE FROM notes WHERE notes.note_id =  {id};'

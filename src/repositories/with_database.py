@@ -34,7 +34,7 @@ def get_note_db_with_id(cursor, id: int):
 
 @get_connection
 def get_note_db_with_name(cursor, name: str):
-    """Получение заметки по id"""
+    """Получение заметки по имени"""
     cursor.execute(db_request.select_note_by_name.format(name=name))
     return cursor.fetchall()
 
@@ -51,7 +51,7 @@ def create_new_note_db(cursor, note: Note):
 
 @get_connection
 def delete_note_db_with_id(cursor, id: int):
-    """Создание новой заметки"""
+    """Удаление заметки по id"""
     cursor.execute(db_request.delete_note_by_id.format(
         id=id
         ))

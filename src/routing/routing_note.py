@@ -20,7 +20,7 @@ async def get_all_notes():
     return result
 
 
-@app.get("/note_by_id")
+@app.get("/{id}")
 async def get_note_by_id(id: int):
     result = with_database.get_note_db_with_id(id=id)
     if not result["Connection"]:
